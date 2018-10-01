@@ -1,0 +1,28 @@
+h2 Register
+
+.form
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+
+
+    .field
+      = f.label :email, :class => "label"
+      .control
+        = f.email_field :email, autofocus: true, autocomplete: "email", :class => "input"
+
+    .field
+      = f.label :password, :class => "label"
+      .control
+        = f.password_field :password, autocomplete: "new-password", :class => "input"
+        - if @minimum_password_length
+          p.help #{@minimum_password_length} characters minimum
+
+    .field
+      = f.label :password_confirmation, :class => "label"
+      .control
+        = f.password_field :password_confirmation, autocomplete: "new-password", :class => "input"
+
+
+    .actionbutton
+      = f.submit "Register", :class => "button is-primary"
