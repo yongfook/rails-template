@@ -9,7 +9,7 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  body
+  body class="#{controller_name} #{action_name}"
   	section.section
   		.container
     		= yield
